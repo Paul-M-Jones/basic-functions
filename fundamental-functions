@@ -1,0 +1,90 @@
+#Making Lists, Appending Lists, User Input, Output
+--------------------------------------------------
+
+#Ask User How Many Movies They Want to Rate
+num_movies = int(input("How many movies do you want to rate?" ))
+movies = []
+count = 0
+
+#User Enters Movie Titles
+while count < num_movies:
+    movie = input("What is the name of the movie? ")
+    movies.append(movie)
+    count += 1
+
+#Ask User to Rate Each Movie
+rating = []
+for item in movies:
+    rate_movies = int(input(f"How would you rate {item} out of 10?" ))
+    rating.append(rate_movies)
+    print("Thank you!")
+
+#Output Users Movies and Their Rating for Each Movie.
+for movie, score in zip(movies, rating):
+    if score > 7:
+        print(f"You rated {movie} {score} out of 10. Great choice!")
+    elif score > 5:
+        print(f"You rated {movie} {score} out of 10. Not bad.")
+    else:
+        print(f"You rated {movie} {score} out of 10. Maybe not your favourite…")
+
+#This was my first attempt to undestand how to join together several basic functions as well as using f-strings.
+
+
+#Using def and if/else to Generate Output
+-----------------------------------------
+
+#Define how to respond to User input
+def response(choice):
+    if choice == "vanilla":
+        print("A classic choice!")
+    elif choice == "chocolate":
+        print("Oh! Rich and delicious!")
+    elif choice == "strawberry":
+        print("Fruity and fresh!")
+    else:
+        print("Interesting taste!")
+#Ask for User Input
+flavour = input("What flavour ice cream do you like? ")
+response(flavour)
+
+#I found the mechanics of this a little confusing at first.
+#But I think I understand both the connection and the seperation of the def function. 
+
+
+#Repeating the Above Activity to Reinfoce Understanding
+-------------------------------------------------------
+
+def response(choice):
+    if choice == "rock":
+        print("A classic choice!")
+    elif choice == "pop":
+        print("Oh! Fun and friendly!")
+    elif choice == "metal":
+        print("Excellent!")
+    elif choice == "Infected Mushroom":
+        print("You are truly a discerning sophisticate!")
+    else:
+        print("Interesting taste!")
+
+genre = input("What music do you like? ")
+response(genre)
+
+
+#Basic Adding and Multiplying Numbers with def
+-------------------------------------
+
+#Simple Addition
+def add_five(number):
+    return number +5
+something1 = add_five(10)
+print(something1)
+
+#Simple Multiplication
+def multiply_five(number):
+    return number *5
+something2 = multiply_five(10)
+print(something2)
+
+#Adding the Results
+print(something1 + something2)
