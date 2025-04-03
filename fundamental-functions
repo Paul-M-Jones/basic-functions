@@ -146,3 +146,42 @@ while True:
 # Call the Function with a Valid Number
 result = odd_even(number)
 print(result)
+
+-----------------------------
+
+----------
+03.04.2025
+----------
+
+#Weather / Temperature Checker
+------------------------------
+#Define Messages Based on number
+def temperature(number):
+    message = ""
+    if number < -10:
+        message = "It's freezing cold!"
+    elif number < 10:
+        message = "It's cold!"
+    elif number > 50:
+        message = "It's roasting!"
+    elif number > 25:
+        message = "It's hot!"
+    else:
+        message = "Nice weather."
+    return message
+
+#Ensure User Input is Valid
+while True:
+    user_input = input("Please tell me the temperature now. ")
+    try:
+        number = int(user_input)
+        break #Exit loop if valid
+    except ValueError:
+        print("That's not a valid input.")
+
+#Call the Function
+result = temperature(number)
+print(result)
+
+
+
